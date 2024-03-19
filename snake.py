@@ -103,8 +103,6 @@ while True:
 	# handling key events
 	for event in pygame.event.get():
 		if event.type == pygame.KEYDOWN:
-			if event.key == pygame.K_ESCAPE:
-				pygame.quit()
 			if event.key == pygame.K_w:
 				change_to = 'UP'
 			if event.key == pygame.K_s:
@@ -113,6 +111,8 @@ while True:
 				change_to = 'LEFT'
 			if event.key == pygame.K_d:
 				change_to = 'RIGHT'
+			if event.key == pygame.K_ESCAPE:
+				game_over()
 
 	# If two keys pressed simultaneously
 	# we don't want snake to move into two 
@@ -160,11 +160,12 @@ while True:
 		fruit_position[0], fruit_position[1], 10, 10))
 
 	# Game Over conditions
+	
 	if snake_position[0] < 0 or snake_position[0] > window_x-10:
 		game_over()
 	if snake_position[1] < 0 or snake_position[1] > window_y-10:
 		game_over()
-
+	
 	# Touching the snake body
 	for block in snake_body[1:]:
 		if snake_position[0] == block[0] and snake_position[1] == block[1]:
