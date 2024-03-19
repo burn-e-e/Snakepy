@@ -69,7 +69,7 @@ def show_score(choice, color, font, size):
 def game_over():
 
 	# creating font object my_font
-	my_font = pygame.font.SysFont("assets/font.ttf", 50)
+	my_font = pygame.font.SysFont("assets/CHICAGOMON.TTF", 50)
 	
 	# creating a text surface on which text 
 	# will be drawn
@@ -102,6 +102,9 @@ while True:
 	
 	# handling key events
 	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			pygame.quit()
+			quit()
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_w:
 				change_to = 'UP'
@@ -111,8 +114,7 @@ while True:
 				change_to = 'LEFT'
 			if event.key == pygame.K_d:
 				change_to = 'RIGHT'
-			if event.key == pygame.K_ESCAPE:
-				game_over()
+
 
 	# If two keys pressed simultaneously
 	# we don't want snake to move into two 
