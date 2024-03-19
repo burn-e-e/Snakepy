@@ -4,7 +4,7 @@ from button import Button
 pygame.init()
 
 SCREEN = pygame.display.set_mode((1280, 720))
-pygame.display.set_caption("Menu")
+pygame.display.set_caption("Зэс")
 
 BG = pygame.image.load("assets/Background.png")
 

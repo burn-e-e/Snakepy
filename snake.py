@@ -19,8 +19,7 @@ blue = pygame.Color(0, 0, 255)
 # Initialising pygame
 pygame.init()
 
-# Initialise game window
-pygame.display.set_caption('GeeksforGeeks Snakes')
+pygame.display.set_caption('Могой')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # FPS (frames per second) controller
@@ -97,13 +96,15 @@ def game_over():
 	# quit the program
 	quit()
 
-
+	
 # Main Function
 while True:
 	
 	# handling key events
 	for event in pygame.event.get():
 		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_ESCAPE:
+				pygame.quit()
 			if event.key == pygame.K_w:
 				change_to = 'UP'
 			if event.key == pygame.K_s:
