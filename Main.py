@@ -2,7 +2,7 @@ import pygame, sys
 from button import Button
 
 pygame.init()
-
+# 123
 SCREEN = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Зэс")
 
