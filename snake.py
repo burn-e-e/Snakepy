@@ -2,6 +2,7 @@
 import pygame
 import time
 import random
+from Main import main_menu
 
 snake_speed = 15
 
@@ -91,10 +92,7 @@ def game_over():
 	time.sleep(2)
 	
 	# deactivating pygame library
-	pygame.quit()
-	
-	# quit the program
-	quit()
+	main_menu()
 
 	
 # Main Function
@@ -174,7 +172,7 @@ while True:
 			game_over()
 
 	# displaying score continuously
-	show_score(1, white, 'times new roman', 20)
+		(1, white, 'times new roman', 20)
 
 	# Refresh game screen
 	pygame.display.update()
